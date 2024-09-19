@@ -1,0 +1,34 @@
+## SPDX-License-Identifier: GPL-2.0-only
+
+comment "Kingler"
+
+config BOARD_GOOGLE_KINGLER
+	bool "->  Kingler"
+
+config BOARD_GOOGLE_STEELIX
+	bool "->  Steelix"
+
+config BOARD_GOOGLE_VOLTORB
+	bool "->  Voltorb"
+
+config BOARD_GOOGLE_PONYTA
+	bool "->  Ponyta"
+
+comment "Krabby"
+
+config BOARD_GOOGLE_KRABBY
+	bool "->  Krabby"
+
+config BOARD_GOOGLE_TENTACRUEL
+	bool "->  Tentacruel"
+
+config BOARD_GOOGLE_MAGIKARP
+	bool "->  Magikarp"
+
+config BOARD_GOOGLE_CHINCHOU
+	bool "->  Chinchou"
+
+comment "Staryu"
+
+config BOARD_GOOGLE_STARMIE
+	bool "->  Starmie"

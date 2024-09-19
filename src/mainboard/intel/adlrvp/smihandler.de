@@ -1,0 +1,49 @@
+/* SPDX-License-Identifier: GPL-2.0-or-later */
+
+#include <cpu/x86/smm.h>
+#include <console/console.h>
+#include <intelblocks/smihandler.h>
+#include <baseboard/ec.h>
+#include <ec/intel/commands.h>
+#include <acpi/acpi.h>
+#include <ec/acpi/ec.h>
+
+void mainboard_smi_sleep(u8 slp_typ)
+{
+	if (CONFIG(EC_INTEL_ADLP))
+	printk(BIOS_DEBUG, "Mainboard SMI sleep handler: %02x\n", slp_typ);
+	
+	switch (slp_typ) {
+        case ACPI_S3:
+                /* should know which functions to add */
+                break;
+        case ACPI_S4:
+                 /* should know which functions to add */
+                break;
+        case ACPI_S5:
+                 /* should know which functions to add */
+                break;
+        default:
+                break;
+        }
+}  
+
+int mainboard_smi_apmc(u8 apmc)
+{
+	if (CONFIG(EC_INTEL_ADLP))
+    	printk(BIOS_DEBUG, "Mainboard SMI APMC handler: %02x\n", apmc);
+	
+	switch (apmc) {
+        case APM_CNT_ACPI_ENABLE:
+                send_ec_command(SMCHOST_ENABLE_ACPI);
+                break;
+        case APM_CNT_ACPI_DISABLE:
+                send_ec_command(SMCHOST_DISABLE_ACPI);
+                break;
+        default:
+                break;
+        }
+
+	return 0;
+}
+	
